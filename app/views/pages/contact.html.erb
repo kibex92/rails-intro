@@ -1,0 +1,16 @@
+<h1>Contact us</h1>
+<p>By email</p>
+
+<ol>
+  <% @members.each do |member| %>
+    <li><%= member %></li>
+  <% end %>
+</ol>
+
+<form action="/contact" method="get" >
+  <label for="member">Who are you looking for? </label>
+  <input type="text" id="member" name="member" value="<%= params[:member] %>">
+  <button type="submit">Search</button>
+</form>
+
+<%= link_to "Home", root_path %>
